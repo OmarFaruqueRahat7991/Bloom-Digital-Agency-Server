@@ -1,11 +1,18 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+// const jwt = require('jsonwebtoken');
+// const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+require("dotenv").config();
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('My Eleventh Assignment Server Is Running');
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`My Eleventh Assignment Server Is Running On Port ${port}`);
 })
