@@ -36,6 +36,18 @@ async function run() {
             const oneService = await serviceCollection.findOne(query);
             res.send(oneService);
           });
+        app.get("/checkout/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const checkout = await serviceCollection.findOne(query);
+            res.send(checkout);
+          });
+        app.get("/review/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const review = await serviceCollection.findOne(query);
+            res.send(review);
+          });
     }
     finally{
 
